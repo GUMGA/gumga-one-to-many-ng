@@ -74,6 +74,7 @@ bower install gumga-one-to-many-ng --save
                   displayable-property="nome"
                   controller="ModalClienteController"
                   property="nome"
+                  size="md"
                   edit-button-class="btn btn-primary"
                   remove-button-class="btn btn-danger"
                   class="ng-isolate-scope">
@@ -92,6 +93,7 @@ bower install gumga-one-to-many-ng --save
   name="Novo Cliente"
   children="ctrl.clientes"
   template-url="modal.html"
+  size="md"
   displayable-property="nome"
   controller="ModalClienteController"
   property="nome"
@@ -165,6 +167,12 @@ bower install gumga-one-to-many-ng --save
             </tr>
           </thead>
           <tbody>
+            <tr>
+              <td><strong>size</strong></td>
+              <td><code>String</code></td>
+              <td>Não</td>
+              <td>Tamanho do modal. <b>sm, md, lg</b>.</td>
+            </tr>
             <tr>
               <td><strong>children</strong></td>
               <td><code>Array</code></td>

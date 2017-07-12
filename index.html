@@ -15,7 +15,13 @@
   <div class="row">
     <div class="col-md-8 col-md-offset-2">
       <form name="Example" gumga-form>
-        <gumga-one-to-many name="Novo Cliente" children="pessoas.data" template-url="modal.html" displayable-property="nome" controller="ModalClienteController"
+        <gumga-one-to-many
+          name="Novo Cliente"
+          children="pessoas.data"
+          template-url="modal.html"
+          size="md"
+          displayable-property="nome"
+          controller="ModalClienteController"
           edit-button-class="btn btn-primary pull-right" remove-button-class="btn btn-danger pull-right">
           <p>
             {{$parent.child.nome}}
@@ -31,17 +37,17 @@
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <script src="../node_modules/angular/angular.min.js"></script>
+  <script src="node_modules/angular/angular.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.0/ui-bootstrap-tpls.min.js"></script>
-  <script src="../node_modules/gumga-rest-ng/dist/gumga-rest.js"></script>
-  <script src="../node_modules/gumga-controller-ng/dist/gumga-controller.js"></script>
-  <script src="../node_modules/gumga-populate-ng/dist/gumga-populate.js"></script>
-  <script src="../dist/gumga-one-to-many.js"></script>
+  <script src="node_modules/gumga-rest-ng/dist/gumga-rest.js"></script>
+  <script src="node_modules/gumga-controller-ng/dist/gumga-controller.js"></script>
+  <script src="node_modules/gumga-populate-ng/dist/gumga-populate.js"></script>
+  <script src="dist/gumga-one-to-many.js"></script>
   <script>
     angular
       .module('app', ['ui.bootstrap','gumga.onetomany','gumga.controller', 'gumga.rest'])
       .config(function ($httpProvider) {
-        $httpProvider.defaults.headers.common['gumgaToken'] = 'batistakids'
+        $httpProvider.defaults.headers.common['gumgaToken'] = 'homologacaokids'
       })
       .controller('ctrl', ['gumgaController', 'GumgaRest', '$scope', function (gumgaController, GumgaRest, $scope) {
         var PessoaService = new GumgaRest('http://192.168.25.250/gileadeweb-api/api/pessoacadastro');

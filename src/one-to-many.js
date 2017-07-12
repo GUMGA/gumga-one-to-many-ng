@@ -33,6 +33,7 @@ function OneToMany($interpolate, $uibModal, $populate) {
       templateUrl: '@',
       property: '@displayableProperty',
       name: '@',
+      size: '@?',
       controller: '@',
       onDelete: '&?',
       onValueVisualizationOpened: '&?',
@@ -84,6 +85,7 @@ function OneToMany($interpolate, $uibModal, $populate) {
         eventHandler.valueVisualizationOpened();
         var modalInstance = $uibModal.open({
           templateUrl: scope.templateUrl,
+          size: scope.size || 'md',
           controller: scope.controller,
           resolve: {
             entity: function () {
@@ -106,4 +108,3 @@ function OneToMany($interpolate, $uibModal, $populate) {
 }
 angular.module('gumga.onetomany', ['gumga.populate'])
   .directive('gumgaOneToMany', OneToMany)
-
